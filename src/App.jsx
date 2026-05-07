@@ -912,81 +912,89 @@ export default function App() {
 </div>
 
   {/* NAV BUTTONS */}
+  {/* NAV BUTTONS */}
+<div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flex: 1,
+    gap: 12,
+    flexWrap: "wrap",
+  }}
+>
+  {/* LEFT MENU (desktop + mobile wrap) */}
   <div
     style={{
       display: "flex",
-      gap: 14,
-      alignItems: "center",
+      gap: 10,
       flexWrap: "wrap",
+      justifyContent: "center",
+      flex: 1,
     }}
   >
-    {[
-      "Home",
-      "Recipes",
-      "Favorites",
-      "Categories",
-    ].map((item, i) => (
-      <button
-        key={i}
-        style={{
-          padding: "12px 20px",
+    {["Home", "Recipes", "Favorites", "Categories"].map(
+      (item, i) => (
+        <button
+          key={i}
+          style={{
+            padding: "10px 16px",
+            borderRadius: 999,
+            border:
+              item === "Home"
+                ? "1px solid rgba(212,175,55,0.35)"
+                : `1px solid ${THEME.border}`,
 
-          borderRadius: 999,
+            background:
+              item === "Home"
+                ? THEME.goldSoft
+                : "rgba(255,255,255,0.03)",
 
-          border:
-            item === "Home"
-              ? `1px solid rgba(212,175,55,0.35)`
-              : `1px solid ${THEME.border}`,
+            color:
+              item === "Home"
+                ? THEME.gold
+                : THEME.soft,
 
-          background:
-            item === "Home"
-              ? THEME.goldSoft
-              : "rgba(255,255,255,0.03)",
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            flex: "0 0 auto",
+          }}
+        >
+          {item}
+        </button>
+      )
+    )}
+  </div>
 
-          color:
-            item === "Home"
-              ? THEME.gold
-              : THEME.soft,
-
-          fontSize: 13,
-          fontWeight: 600,
-
-          cursor: "pointer",
-
-          backdropFilter: "blur(12px)",
-
-          transition: "0.3s",
-        }}
-      >
-        {item}
-      </button>
-    ))}
-
-    {/* SIGN OUT */}
+  {/* RIGHT ACTION BUTTON */}
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      width: "100%",
+      maxWidth: 160,
+    }}
+  >
     <button
       style={{
-        padding: "12px 22px",
-
+        padding: "10px 18px",
         borderRadius: 999,
         border: "none",
-
         background:
           "linear-gradient(135deg,#d4af37,#f5d76e)",
-
         color: "#000",
-
         fontWeight: 800,
         fontSize: 13,
-
         cursor: "pointer",
-
-        boxShadow:
-          "0 10px 30px rgba(212,175,55,0.22)",
+        width: "100%",
       }}
     >
       Sign Out
     </button>
   </div>
+</div>
 </div>
         {/* HERO */}
         <section
