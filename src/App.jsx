@@ -913,87 +913,39 @@ export default function App() {
 
   {/* NAV BUTTONS */}
   {/* NAV BUTTONS */}
+{/* NAV BAR RIGHT SIDE */}
 <div
   style={{
     display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    flex: 1,
-    gap: 12,
-    flexWrap: "wrap",
+    justifyContent: "flex-end",
+    width: "100%",
   }}
 >
-  {/* LEFT MENU (desktop + mobile wrap) */}
-  <div
+  <button
     style={{
-      display: "flex",
-      gap: 10,
-      flexWrap: "wrap",
-      justifyContent: "center",
-      flex: 1,
+      padding: "12px 22px",
+      borderRadius: 999,
+      border: "none",
+
+      background:
+        "linear-gradient(135deg,#d4af37,#f5d76e)",
+
+      color: "#000",
+      fontWeight: 800,
+      fontSize: 13,
+
+      cursor: "pointer",
+
+      boxShadow:
+        "0 10px 30px rgba(212,175,55,0.22)",
+
+      whiteSpace: "nowrap",
+
+      width: "fit-content",
     }}
   >
-    {["Home", "Recipes", "Favorites", "Categories"].map(
-      (item, i) => (
-        <button
-          key={i}
-          style={{
-            padding: "10px 16px",
-            borderRadius: 999,
-            border:
-              item === "Home"
-                ? "1px solid rgba(212,175,55,0.35)"
-                : `1px solid ${THEME.border}`,
-
-            background:
-              item === "Home"
-                ? THEME.goldSoft
-                : "rgba(255,255,255,0.03)",
-
-            color:
-              item === "Home"
-                ? THEME.gold
-                : THEME.soft,
-
-            fontSize: 13,
-            fontWeight: 600,
-            cursor: "pointer",
-            whiteSpace: "nowrap",
-            flex: "0 0 auto",
-          }}
-        >
-          {item}
-        </button>
-      )
-    )}
-  </div>
-
-  {/* RIGHT ACTION BUTTON */}
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      width: "100%",
-      maxWidth: 160,
-    }}
-  >
-    <button
-      style={{
-        padding: "10px 18px",
-        borderRadius: 999,
-        border: "none",
-        background:
-          "linear-gradient(135deg,#d4af37,#f5d76e)",
-        color: "#000",
-        fontWeight: 800,
-        fontSize: 13,
-        cursor: "pointer",
-        width: "100%",
-      }}
-    >
-      Sign Out
-    </button>
-  </div>
+    Sign Out
+  </button>
 </div>
 </div>
         {/* HERO */}
